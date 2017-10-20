@@ -7,37 +7,30 @@ I implemented support for the W-channel as well so colour messages are now 4 wor
 There is an ALARM mode that slowly fades to reddish-white and back like “I see you”. The RELAX mode can now be programmed to fade between 8 settings, each being a 4 word hex state e.g.
 
 ff000000
-
 00ff0000
-
 0000ff00
-
 000000ff
-
 aa000000
-
 00aa0000
-
 0000aa00
-
 000000aa
 
 
 These are the messages that can be sent using MySensors API
 
-Message type	Payload		Comment
+Message type		Payload		Comment
 	
-2  V_STATUS	0 : 1		Off: On
+2  V_STATUS			0 : 1		Off: On
 
-3  V_PERCENTAGE	0 - 100		Dimmer value 0 - 100%
+3  V_PERCENTAGE		0 - 100		Dimmer value 0 - 100%
 
-41 V_RGBW	90abcdef	Fade to colour RGBW 90 ab cd ef
+41 V_RGBW			90abcdef	Fade to colour RGBW 90 ab cd ef
 
-24 V_VAR1	0 - 2000	Fade speed. Higher number = lower speed
+24 V_VAR1			0 - 2000	Fade speed. Higher number = lower speed
 
-25 V_VAR2	0 : 1 : 2	0=Normal : 1= alarm : 2= relax
+25 V_VAR2			0 : 1 : 2	0=Normal : 1= alarm : 2= relax
 
-26 V_VAR3	naabbccdd	Set row n in the relax matrix to aabbccdd 0 <= n <= 7
+26 V_VAR3			naabbccdd	Set row n in the relax matrix to aabbccdd 0 <= n <= 7
 
 
 The LED-strip is driven on +24V using IRLZ44N MOSFETs
