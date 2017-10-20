@@ -1,0 +1,714 @@
+EESchema Schematic File Version 2
+LIBS:LED_strip-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:mysensors_arduino
+LIBS:mysensors_connectors
+LIBS:mysensors_logic
+LIBS:mysensors_mcu
+LIBS:mysensors_memories
+LIBS:mysensors_network
+LIBS:mysensors_radios
+LIBS:mysensors_regulators
+LIBS:mysensors_security
+LIBS:mysensors_sensors
+LIBS:gbmylib
+LIBS:LED_strip-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Colour LED-strip control"
+Date "2017-03-08"
+Rev "1.1"
+Comp "GBmySensors"
+Comment1 "Replaced P1 with 6-pole"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ArduinoProMini IC1
+U 1 1 58BC0AAF
+P 5100 2900
+F 0 "IC1" H 4350 4150 40  0000 L BNN
+F 1 "ArduinoProMini" H 5500 1500 40  0000 L BNN
+F 2 "mysensors_arduino:pro_mini" H 5100 2900 30  0001 C CIN
+F 3 "" H 5100 2900 60  0000 C CNN
+	1    5100 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L NRF24L01 U2
+U 1 1 58BC0AF3
+P 8600 2100
+F 0 "U2" H 8700 2350 60  0000 C CNN
+F 1 "NRF24L01" H 8850 1850 60  0000 C CNN
+F 2 "mysensors_radios:NRF24L01" H 8600 1950 60  0001 C CNN
+F 3 "" H 8600 1950 60  0000 C CNN
+	1    8600 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L LP2950 U3
+U 1 1 58BC0B5F
+P 8600 3050
+F 0 "U3" H 8700 2850 50  0000 L CNN
+F 1 "LE33ABZ" H 8700 2750 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 8400 3300 50  0001 L CNN
+F 3 "None" H 8600 3050 50  0001 L CNN
+F 4 "Samtec" H 8200 2750 50  0001 L CNN "MF"
+F 5 "None" H 8600 3050 50  0001 L CNN "Price"
+F 6 "LE33ABZ" H 8750 2900 50  0001 L CNN "MP"
+F 7 "Unavailable" H 8200 2850 50  0001 L CNN "Availability"
+	1    8600 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C8
+U 1 1 58BC0BDE
+P 9600 2150
+F 0 "C8" H 9625 2250 50  0000 L CNN
+F 1 "10u" H 9625 2050 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D10_L13_P5" H 9638 2000 50  0001 C CNN
+F 3 "" H 9600 2150 50  0000 C CNN
+	1    9600 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C11
+U 1 1 58BC0C33
+P 10100 3150
+F 0 "C11" H 10125 3250 50  0000 L CNN
+F 1 "22u" H 10125 3050 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D8_L13_P3.8" H 10138 3000 50  0001 C CNN
+F 3 "" H 10100 3150 50  0000 C CNN
+	1    10100 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C9
+U 1 1 58BC0C88
+P 9650 3150
+F 0 "C9" H 9675 3250 50  0000 L CNN
+F 1 "100n" H 9675 3050 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 9688 3000 50  0001 C CNN
+F 3 "" H 9650 3150 50  0000 C CNN
+	1    9650 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 58BC0E68
+P 9600 2700
+F 0 "#PWR01" H 9600 2450 50  0001 C CNN
+F 1 "GND" H 9600 2550 50  0000 C CNN
+F 2 "" H 9600 2700 50  0000 C CNN
+F 3 "" H 9600 2700 50  0000 C CNN
+	1    9600 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 58BC0EA0
+P 9650 3600
+F 0 "#PWR02" H 9650 3350 50  0001 C CNN
+F 1 "GND" H 9650 3450 50  0000 C CNN
+F 2 "" H 9650 3600 50  0000 C CNN
+F 3 "" H 9650 3600 50  0000 C CNN
+	1    9650 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 3100 7400 3100
+Wire Wire Line
+	7400 3100 7400 2000
+Wire Wire Line
+	7400 2000 8200 2000
+Wire Wire Line
+	6100 3000 7500 3000
+Wire Wire Line
+	7500 3000 7500 2100
+Wire Wire Line
+	7500 2100 8200 2100
+Wire Wire Line
+	6100 3200 7600 3200
+Wire Wire Line
+	7600 3200 7600 2200
+Wire Wire Line
+	7600 2200 8200 2200
+Connection ~ 9600 2550
+Wire Wire Line
+	9600 2000 9600 1600
+Wire Wire Line
+	8600 1600 10100 1600
+Wire Wire Line
+	8600 1600 8600 1750
+Wire Wire Line
+	9000 2000 9000 1500
+Wire Wire Line
+	9000 1500 7300 1500
+Wire Wire Line
+	7300 1500 7300 2800
+Wire Wire Line
+	7300 2800 6100 2800
+Wire Wire Line
+	8900 2950 10100 2950
+Wire Wire Line
+	9650 2950 9650 3000
+Wire Wire Line
+	10100 1600 10100 3000
+Connection ~ 9650 2950
+Wire Wire Line
+	8600 3250 8600 3500
+Wire Wire Line
+	8600 3500 10100 3500
+Wire Wire Line
+	9650 3300 9650 3600
+Wire Wire Line
+	10100 3500 10100 3300
+Connection ~ 9650 3500
+Connection ~ 9600 1600
+Connection ~ 10100 2950
+Text Label 9100 2950 0    60   ~ 0
+3.3V
+$Comp
+L IRLZ44N-RESCUE-LED_strip Q1
+U 1 1 58BC1C58
+P 7900 3800
+F 0 "Q1" H 8150 3875 50  0000 L CNN
+F 1 "IRLZ44N" H 8150 3800 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Vertical" H 8150 3725 50  0001 L CIN
+F 3 "" H 7900 3800 50  0000 L CNN
+	1    7900 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L IRLZ44N-RESCUE-LED_strip Q2
+U 1 1 58BC1C8E
+P 7900 4400
+F 0 "Q2" H 8150 4475 50  0000 L CNN
+F 1 "IRLZ44N" H 8150 4400 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Vertical" H 8150 4325 50  0001 L CIN
+F 3 "" H 7900 4400 50  0000 L CNN
+	1    7900 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L IRLZ44N-RESCUE-LED_strip Q3
+U 1 1 58BC1CCE
+P 7900 5000
+F 0 "Q3" H 8150 5075 50  0000 L CNN
+F 1 "IRLZ44N" H 8150 5000 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Vertical" H 8150 4925 50  0001 L CIN
+F 3 "" H 7900 5000 50  0000 L CNN
+	1    7900 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L IRLZ44N-RESCUE-LED_strip Q4
+U 1 1 58BC1D06
+P 7900 5600
+F 0 "Q4" H 8150 5675 50  0000 L CNN
+F 1 "IRLZ44N" H 8150 5600 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Vertical" H 8150 5525 50  0001 L CIN
+F 3 "" H 7900 5600 50  0000 L CNN
+	1    7900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 58BC1D7A
+P 8650 6000
+F 0 "#PWR03" H 8650 5750 50  0001 C CNN
+F 1 "GND" H 8650 5850 50  0000 C CNN
+F 2 "" H 8650 6000 50  0000 C CNN
+F 3 "" H 8650 6000 50  0000 C CNN
+	1    8650 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4000 8650 4000
+Wire Wire Line
+	8650 4000 8650 6000
+Wire Wire Line
+	8000 4600 8650 4600
+Connection ~ 8650 4600
+Wire Wire Line
+	8000 5200 8650 5200
+Connection ~ 8650 5200
+Wire Wire Line
+	8000 5800 8650 5800
+Connection ~ 8650 5800
+Wire Wire Line
+	6100 2100 7050 2100
+Wire Wire Line
+	7050 2100 7050 3850
+Wire Wire Line
+	6100 2300 6900 2300
+Wire Wire Line
+	6900 2300 6900 4450
+Wire Wire Line
+	6100 2400 6750 2400
+Wire Wire Line
+	6750 2400 6750 5050
+$Comp
+L +24V #PWR04
+U 1 1 58BC2220
+P 9900 3900
+F 0 "#PWR04" H 9900 3750 50  0001 C CNN
+F 1 "+24V" H 9900 4040 50  0000 C CNN
+F 2 "" H 9900 3900 50  0000 C CNN
+F 3 "" H 9900 3900 50  0000 C CNN
+	1    9900 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 5400 9900 5400
+Wire Wire Line
+	9900 5400 9900 4700
+Wire Wire Line
+	8000 4800 9750 4800
+Wire Wire Line
+	9750 4800 9750 4600
+Wire Wire Line
+	9750 4600 9900 4600
+Wire Wire Line
+	8000 4200 8900 4200
+Wire Wire Line
+	8900 4200 8900 4500
+Wire Wire Line
+	8900 4500 9900 4500
+Wire Wire Line
+	8000 3600 9050 3600
+Wire Wire Line
+	9050 3600 9050 5550
+Wire Wire Line
+	9050 4400 9900 4400
+Text Label 8700 3600 0    60   ~ 0
+LED_R
+Text Label 8700 4200 0    60   ~ 0
+LED_G
+Text Label 8700 4800 0    60   ~ 0
+LED_B
+Text Label 8700 5400 0    60   ~ 0
+LED_W
+$Comp
+L GND #PWR05
+U 1 1 58BC29C0
+P 3900 4550
+F 0 "#PWR05" H 3900 4300 50  0001 C CNN
+F 1 "GND" H 3900 4400 50  0000 C CNN
+F 2 "" H 3900 4550 50  0000 C CNN
+F 3 "" H 3900 4550 50  0000 C CNN
+	1    3900 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 3900 3900 3900
+Wire Wire Line
+	3900 3900 3900 4550
+Wire Wire Line
+	4200 4000 3900 4000
+Connection ~ 3900 4000
+Wire Wire Line
+	4200 4100 3900 4100
+Connection ~ 3900 4100
+$Comp
+L LM7805CT U1
+U 1 1 58BC2AEC
+P 2600 2150
+F 0 "U1" H 2400 2350 50  0000 C CNN
+F 1 "LM7805CT" H 2600 2350 50  0000 L CNN
+F 2 "Power_Integrations:TO-220" H 2600 2500 50  0000 C CIN
+F 3 "" H 2600 2150 50  0000 C CNN
+	1    2600 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L +24V #PWR06
+U 1 1 58BC2CA0
+P 1550 1800
+F 0 "#PWR06" H 1550 1650 50  0001 C CNN
+F 1 "+24V" H 1550 1940 50  0000 C CNN
+F 2 "" H 1550 1800 50  0000 C CNN
+F 3 "" H 1550 1800 50  0000 C CNN
+	1    1550 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 58BC2CD8
+P 1550 2450
+F 0 "C1" H 1575 2550 50  0000 L CNN
+F 1 "100n" H 1575 2350 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 1588 2300 50  0001 C CNN
+F 3 "" H 1550 2450 50  0000 C CNN
+	1    1550 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C2
+U 1 1 58BC2D4D
+P 1950 2450
+F 0 "C2" H 1975 2550 50  0000 L CNN
+F 1 "10u 63V" H 1975 2350 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D10_L13_P5" H 1988 2300 50  0001 C CNN
+F 3 "" H 1950 2450 50  0000 C CNN
+	1    1950 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 58BC2DCD
+P 3300 2450
+F 0 "C3" H 3325 2550 50  0000 L CNN
+F 1 "100n" H 3325 2350 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 3338 2300 50  0001 C CNN
+F 3 "" H 3300 2450 50  0000 C CNN
+	1    3300 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C4
+U 1 1 58BC2E2F
+P 3750 2450
+F 0 "C4" H 3775 2550 50  0000 L CNN
+F 1 "22u" H 3775 2350 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D8_L13_P3.8" H 3788 2300 50  0001 C CNN
+F 3 "" H 3750 2450 50  0000 C CNN
+	1    3750 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 58BC2E8F
+P 2600 2800
+F 0 "#PWR07" H 2600 2550 50  0001 C CNN
+F 1 "GND" H 2600 2650 50  0000 C CNN
+F 2 "" H 2600 2800 50  0000 C CNN
+F 3 "" H 2600 2800 50  0000 C CNN
+	1    2600 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 2100 2200 2100
+Connection ~ 1550 2100
+Wire Wire Line
+	1950 1850 1950 2300
+Connection ~ 1950 2100
+Wire Wire Line
+	3000 2100 4200 2100
+Wire Wire Line
+	3300 2300 3300 2100
+Connection ~ 3300 2100
+Wire Wire Line
+	3750 1300 3750 2300
+Connection ~ 3750 2100
+Wire Wire Line
+	2600 2400 2600 2800
+Wire Wire Line
+	1550 2600 1550 2700
+Wire Wire Line
+	1150 2700 3750 2700
+Connection ~ 2600 2700
+Wire Wire Line
+	1950 2600 1950 2800
+Connection ~ 1950 2700
+Wire Wire Line
+	3750 2700 3750 2600
+Wire Wire Line
+	3300 2600 3300 2700
+Connection ~ 3300 2700
+Wire Wire Line
+	8300 2950 8000 2950
+Wire Wire Line
+	8000 2950 8000 1300
+Wire Wire Line
+	8000 1300 3750 1300
+NoConn ~ 4200 1800
+NoConn ~ 6100 1800
+NoConn ~ 6100 1900
+NoConn ~ 6100 2500
+NoConn ~ 6100 2600
+NoConn ~ 6100 3400
+NoConn ~ 6100 3500
+NoConn ~ 6100 3600
+NoConn ~ 6100 3700
+NoConn ~ 6100 3800
+NoConn ~ 6100 3900
+NoConn ~ 6100 4000
+NoConn ~ 6100 4100
+NoConn ~ 4200 3600
+NoConn ~ 4200 3700
+$Comp
+L C C5
+U 1 1 58BC3D37
+P 9050 5700
+F 0 "C5" H 9075 5800 50  0000 L CNN
+F 1 "100n" H 9075 5600 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 9088 5550 50  0001 C CNN
+F 3 "" H 9050 5700 50  0000 C CNN
+	1    9050 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C6
+U 1 1 58BC3DBC
+P 9300 5700
+F 0 "C6" H 9325 5800 50  0000 L CNN
+F 1 "100n" H 9325 5600 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 9338 5550 50  0001 C CNN
+F 3 "" H 9300 5700 50  0000 C CNN
+	1    9300 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C7
+U 1 1 58BC3E05
+P 9550 5700
+F 0 "C7" H 9575 5800 50  0000 L CNN
+F 1 "100n" H 9575 5600 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 9588 5550 50  0001 C CNN
+F 3 "" H 9550 5700 50  0000 C CNN
+	1    9550 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C10
+U 1 1 58BC3E51
+P 9800 5700
+F 0 "C10" H 9825 5800 50  0000 L CNN
+F 1 "100n" H 9825 5600 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L13_W4_P10" H 9838 5550 50  0001 C CNN
+F 3 "" H 9800 5700 50  0000 C CNN
+	1    9800 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 5550 9800 5400
+Connection ~ 9800 5400
+Wire Wire Line
+	9550 5550 9550 4800
+Connection ~ 9550 4800
+Wire Wire Line
+	9300 5550 9300 4500
+Connection ~ 9300 4500
+Connection ~ 9050 4400
+Wire Wire Line
+	8650 5900 9800 5900
+Wire Wire Line
+	9800 5900 9800 5850
+Wire Wire Line
+	9550 5850 9550 5900
+Connection ~ 9550 5900
+Wire Wire Line
+	9300 5850 9300 5900
+Connection ~ 9300 5900
+Wire Wire Line
+	9050 5850 9050 5900
+Connection ~ 9050 5900
+Connection ~ 8650 5900
+Wire Wire Line
+	1550 1800 1550 2300
+Wire Wire Line
+	9600 2300 9600 2700
+Wire Wire Line
+	8600 2450 8600 2550
+Wire Wire Line
+	8600 2550 9600 2550
+$Comp
+L PWR_FLAG #FLG08
+U 1 1 58BC657C
+P 1950 1850
+F 0 "#FLG08" H 1950 1945 50  0001 C CNN
+F 1 "PWR_FLAG" H 1950 2030 50  0000 C CNN
+F 2 "" H 1950 1850 50  0000 C CNN
+F 3 "" H 1950 1850 50  0000 C CNN
+	1    1950 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG09
+U 1 1 58BC735C
+P 1950 2800
+F 0 "#FLG09" H 1950 2895 50  0001 C CNN
+F 1 "PWR_FLAG" H 1950 2980 50  0000 C CNN
+F 2 "" H 1950 2800 50  0000 C CNN
+F 3 "" H 1950 2800 50  0000 C CNN
+	1    1950 2800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7200 2200 7200 1400
+Wire Wire Line
+	7200 1400 9100 1400
+Wire Wire Line
+	9100 1400 9100 2200
+Wire Wire Line
+	9100 2200 9000 2200
+Wire Wire Line
+	6100 2000 7100 2000
+Wire Wire Line
+	7100 2000 7100 1200
+Wire Wire Line
+	7100 1200 9200 1200
+Wire Wire Line
+	9200 1200 9200 2100
+Wire Wire Line
+	9200 2100 9000 2100
+Wire Wire Line
+	7200 2200 6100 2200
+Wire Wire Line
+	6600 5650 6600 2700
+Wire Wire Line
+	6600 2700 6100 2700
+Text Notes 4750 1600 0    60   ~ 0
+MY_RF24_CE_PIN  4
+$Comp
+L Screw_Terminal_1x02 J1
+U 1 1 58BC9AA1
+P 950 2350
+F 0 "J1" H 950 2600 50  0000 C TNN
+F 1 "Screw_Terminal_1x02" V 800 2350 50  0000 C TNN
+F 2 "mysensors_connectors:TerminalBlock2.54mmx2-kcswalter" H 950 2125 50  0001 C CNN
+F 3 "" H 925 2350 50  0001 C CNN
+	1    950  2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 2250 1150 2100
+Wire Wire Line
+	1150 2450 1150 2700
+Connection ~ 1550 2700
+$Comp
+L R R1
+U 1 1 58BCA384
+P 7000 5900
+F 0 "R1" V 7080 5900 50  0000 C CNN
+F 1 "2k" V 7000 5900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 6930 5900 50  0001 C CNN
+F 3 "" H 7000 5900 50  0000 C CNN
+	1    7000 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R2
+U 1 1 58BD364B
+P 7200 5900
+F 0 "R2" V 7280 5900 50  0000 C CNN
+F 1 "2k" V 7200 5900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7130 5900 50  0001 C CNN
+F 3 "" H 7200 5900 50  0000 C CNN
+	1    7200 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R3
+U 1 1 58BD36BD
+P 7400 5900
+F 0 "R3" V 7480 5900 50  0000 C CNN
+F 1 "2k" V 7400 5900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7330 5900 50  0001 C CNN
+F 3 "" H 7400 5900 50  0000 C CNN
+	1    7400 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R4
+U 1 1 58BD372E
+P 7600 5900
+F 0 "R4" V 7680 5900 50  0000 C CNN
+F 1 "2k" V 7600 5900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7530 5900 50  0001 C CNN
+F 3 "" H 7600 5900 50  0000 C CNN
+	1    7600 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 58BD391C
+P 7850 6250
+F 0 "#PWR010" H 7850 6000 50  0001 C CNN
+F 1 "GND" H 7850 6100 50  0000 C CNN
+F 2 "" H 7850 6250 50  0000 C CNN
+F 3 "" H 7850 6250 50  0000 C CNN
+	1    7850 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 3850 7700 3850
+Wire Wire Line
+	6900 4450 7700 4450
+Wire Wire Line
+	6750 5050 7700 5050
+Wire Wire Line
+	6600 5650 7700 5650
+Wire Wire Line
+	7000 5650 7000 5750
+Connection ~ 7000 5650
+Wire Wire Line
+	7200 5050 7200 5750
+Connection ~ 7200 5050
+Wire Wire Line
+	7400 4450 7400 5750
+Connection ~ 7400 4450
+Wire Wire Line
+	7600 3850 7600 5750
+Connection ~ 7600 3850
+Wire Wire Line
+	7000 6050 7000 6250
+Wire Wire Line
+	7600 6050 7600 6250
+Wire Wire Line
+	7200 6050 7200 6250
+Wire Wire Line
+	7400 6050 7400 6250
+Wire Wire Line
+	7000 6250 7850 6250
+Connection ~ 7600 6250
+Connection ~ 7400 6250
+Connection ~ 7200 6250
+$Comp
+L CONN_01X06 P1
+U 1 1 58C03177
+P 10100 4450
+F 0 "P1" H 10100 4800 50  0000 C CNN
+F 1 "CONN_01X06" V 10200 4450 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_NanoFit_1x06x2.50mm_Angled" H 10100 4450 50  0001 C CNN
+F 3 "" H 10100 4450 50  0000 C CNN
+	1    10100 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3900 9900 4300
+Connection ~ 9900 4200
+$EndSCHEMATC
